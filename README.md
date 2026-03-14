@@ -124,8 +124,6 @@ CREATE TABLE `tide_tend_consistency_task` (
 
 - 执行命令：mvn clean install
 
-![Image text](img/3.png)
-
 ## 5、在您的springboot工程中添加依赖
 
 ```xml
@@ -416,4 +414,3 @@ EXECUTE_SCHEDULE(2, "调度执行");
 ## 10、示例工程及框架源码
 
 tide下的tide-springboot-demo 模块。
-![Image text](img/4.png)
