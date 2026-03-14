@@ -1,0 +1,15 @@
+target
+target/*
+*~
+.idea
+*.iml
+*.eml
+.project
+.settings
+.classpath
+/target
+*/target/**
+files-md5.properties
+.factorypath
+CLAUDE.md
+.claude
