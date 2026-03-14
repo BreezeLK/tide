@@ -140,7 +140,7 @@ CREATE TABLE `tide_tend_consistency_task` (
 
 ## 6、在工程中的配置文件添加配置（optional 可选）
 
-> 做了配置项提示功能，在配置application.yml或application.properties文件中可以通过输入 ruyuan 得到相关提示
+> 做了配置项提示功能，在配置application.yml或application.properties文件中可以通过输入 tide 得到相关提示
 
 ### 6.1、任务表为单库的配置
 
@@ -309,7 +309,7 @@ long generateShardKey();
         executeMode = ExecuteModeEnum.EXECUTE_RIGHT_NOW,
         threadMode = ThreadModeEnum.THREAD_MODEL_ASYNC,
         fallbackClass = SendMessageFallbackHandler.class,
-        // normalAlerter就是 com.ruyuan.eshop.alertm.NormalAlerter类在spring容器中的beanName，beanName默认为类名称目首字母小写其他照抄即可
+        // normalAlerter就是 com.github.tide.alertm.NormalAlerter类在spring容器中的beanName，beanName默认为类名称目首字母小写其他照抄即可
         alertActionBeanName = "normalAlerter" 
 )
 public void sendRightNowAsyncMessage(OrderInfoDTO orderInfo) {
@@ -317,7 +317,7 @@ public void sendRightNowAsyncMessage(OrderInfoDTO orderInfo) {
 }
 ```
 
-> 具体示例见com.ruyuan.eshop.alertm.NormalAlerter类
+> 具体示例见com.github.tide.alertm.NormalAlerter类
 
 ### 6.7、在@ConsistencyTask注解中声明降级类
 
@@ -333,7 +333,7 @@ public void sendRightNowAsyncMessage(OrderInfoDTO orderInfo) {
         executeMode = ExecuteModeEnum.EXECUTE_RIGHT_NOW,
         threadMode = ThreadModeEnum.THREAD_MODEL_ASYNC,
         fallbackClass = SendMessageFallbackHandler.class,
-        // normalAlerter就是 com.ruyuan.eshop.alertm.NormalAlerter类在spring容器中的beanName，beanName默认为类名称目首字母小写其他照抄即可
+        // normalAlerter就是 com.github.tide.demo.alertm.NormalAlerter类在spring容器中的beanName，beanName默认为类名称目首字母小写其他照抄即可
         alertActionBeanName = "normalAlerter" 
 )
 public void sendRightNowAsyncMessage(OrderInfoDTO orderInfo) {
@@ -405,7 +405,7 @@ EXECUTE_SCHEDULE(2, "调度执行");
 ## 9、任务调度
 
 注：业务服务需要在一个定时任务中调用框架的taskScheduleManager.performanceTask()方法。框架会将到时间需要执行及执行失败的任务查询出来后进行执行。
-示例在tide-springboot-demo工程下的com.ruyuan.eshop.schedule.Scheduler类中进行了实现。
+示例在tide-springboot-demo工程下的com.github.tide.schedule.Scheduler类中进行了实现。
 
 ### 9.1、使用spring定时任务调度
 

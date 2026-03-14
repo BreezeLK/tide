@@ -7,7 +7,7 @@ spring:
     hikari:
       connection-timeout: 3000
 
-ruyuan:
+tide:
   tend:
     consistency:
       parallel:
@@ -18,7 +18,7 @@ ruyuan:
           thread-pool-keep-alive-time-unit: SECONDS
           thread-pool-queue-size: 200
           # 框架自身有默认的实现类 来扫描查询任务的开始时间以及结束时间，这里给出定制化的实现类
-          #task-schedule-time-range-class-name: com.ruyuan.eshop.range.MyTaskTimeRangeQuery
+          #task-schedule-time-range-class-name: com.github.tide.range.MyTaskTimeRangeQuery
       action:
         fail-count-threshold: 0
       shard:
